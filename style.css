@@ -3,7 +3,7 @@
   --accent: #4f46e5; --accent-soft: #eef0ff; --warn: #b26a00; --warn-soft: #fdf3e3;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--body); line-height: 1.6;
+body { margin: 0; background: var(--bg); color: var(--body); line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere;
   font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 #app { max-width: 980px; margin: 0 auto; padding: 28px 16px 56px; }
 .hero { padding: 8px 0 22px; }
@@ -13,22 +13,30 @@ h1 { font-size: 30px; color: var(--ink); letter-spacing: -.8px; line-height: 1.2
 .muted { color: var(--dim); }
 .jump { display: flex; gap: 14px; margin-top: 12px; font-size: 14px; font-weight: 700; }
 .jump a { color: var(--accent); text-decoration: none; }
-.cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
-.card { display: grid; grid-template-columns: 116px 1fr; gap: 14px; background: var(--panel); border: 1px solid var(--line);
-  border-radius: 14px; padding: 12px; box-shadow: 0 1px 2px rgba(20,23,28,.04); }
-.card img, .noimg { width: 116px; height: 145px; object-fit: cover; object-position: top; border-radius: 10px;
-  border: 1px solid var(--line); background: #eef0f3; }
+.card { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 16px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 14px; padding: 16px; box-shadow: 0 1px 2px rgba(20,23,28,.04); }
+.card img, .noimg { width: 104px; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: top left;
+  align-self: start; border-radius: 10px; border: 1px solid var(--line); background: #eef0f3; }
+@media (max-width: 480px) {
+  .card { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; padding: 14px; }
+  .card img, .noimg { width: 72px; }
+}
 .noimg { display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--dim); }
 .card.empty { opacity: .6; border-style: dashed; }
-.wk { font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: .06em; }
-.card h3 { margin: 2px 0 4px; font-size: 17px; color: var(--ink); }
-.line { margin: 0 0 8px; font-size: 13.5px; }
-.judge { font-size: 13px; background: var(--warn-soft); color: #6b4a10; border-radius: 8px; padding: 7px 9px; }
-.judge b { display: block; font-size: 11px; color: var(--warn); margin-bottom: 2px; }
-.ai { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
-.ai span { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: #f1f2f4; color: var(--body); }
-.go { font-size: 13px; font-weight: 800; color: var(--accent); text-decoration: none; }
+.card .body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.wk { font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: .06em; line-height: 1; }
+.card h3 { margin: 0; font-size: 17px; line-height: 1.35; letter-spacing: -.3px; color: var(--ink); }
+.line { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.judge { font-size: 13px; line-height: 1.55; background: var(--warn-soft); color: #6b4a10; border-radius: 8px; padding: 9px 11px; }
+.judge b { display: block; font-size: 11px; color: var(--warn); margin-bottom: 4px; }
+.judge p { margin: 0; }
+.judge p + p { margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(178,106,0,.25); }
+.foot { margin-top: auto; padding-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.ai { display: flex; flex-wrap: wrap; gap: 4px; }
+.ai span { font-size: 11px; font-weight: 700; line-height: 1.6; padding: 2px 8px; border-radius: 6px; background: #f1f2f4; color: var(--body); }
+.go { font-size: 13px; font-weight: 800; color: var(--accent); text-decoration: none; white-space: nowrap; }
 .go.off { color: var(--dim); font-weight: 600; }
 .proposal { margin-top: 26px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 18px; }
 .proposal .label { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: .06em; }

@@ -16,10 +16,12 @@
           <div class="wk">${c.week}주</div>
           <h3>${esc(c.title)}</h3>
           ${[].concat(c.line).map(x => `<p class="line">${esc(x)}</p>`).join("")}
-          <div class="judge"><b>내가 내린 판단</b>${[].concat(c.judgment).map(esc).join("<br>")}</div>
-          <div class="ai">${(c.ai || []).map(a => `<span>${esc(a)}</span>`).join("")}</div>
-          ${c.url ? `<a class="go" href="${esc(c.url)}" target="_blank" rel="noopener">써 보기 →</a>`
-                  : `<span class="go off">링크를 넣으십시오</span>`}
+          <div class="judge"><b>내가 내린 판단</b>${[].concat(c.judgment).map(x => `<p>${esc(x)}</p>`).join("")}</div>
+          <div class="foot">
+            <div class="ai">${(c.ai || []).map(a => `<span>${esc(a)}</span>`).join("")}</div>
+            ${c.url ? `<a class="go" href="${esc(c.url)}" target="_blank" rel="noopener">써 보기 →</a>`
+                    : `<span class="go off">링크를 넣으십시오</span>`}
+          </div>
         </div>
       </article>` : `
       <article class="card empty"><div class="noimg">${i + 1}주</div>
