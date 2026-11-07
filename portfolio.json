@@ -8,7 +8,11 @@
               "북극 바다 얼음이 얼마나 줄었는지 다섯 문항으로 맞혀 보는 퀴즈. 폰에서 풀 수 있습니다"],
      "judgment": ["눈 온 날을 하루 1cm 이상으로 정하고 그 기준을 문항 문장에 넣었다. 정답 하나는 엑셀로 직접 세어 맞췄다",
                   "북극해 밖까지 합친 북반구 값을 '북극 바다 얼음'으로 보기로 하고, 3월이 9월의 몇 배인지는 해마다 나눈 뒤 평균하는 방식으로 정했다."],
-     "ai": ["Claude Code", "v0", "Perplexity"], "url": "https://gam-test-beta.vercel.app/", "img": "img/w1.jpg"}
+     "ai": ["Claude Code", "v0", "Perplexity"], "url": "https://gam-test-beta.vercel.app/", "img": "img/w1.jpg"},
+    {"week": 2, "title": "LIMS 요청 분류기 — 빈 폴더에서",
+     "line": "LIMS 요청 한 줄을 넣으면 칸 · 긴급도 · 이유가 나옵니다. 문장과 정답은 직접 만들었습니다",
+     "judgment": "시스템 오류를 놓치는 것을 가장 나쁜 실수로 정했다. 채점용 30개의 정답은 AI의 의도를 가린 채 내가 붙였고, 긴급도 4개가 AI와 갈렸지만 내 판단을 그대로 정답으로 두었다.",
+     "ai": ["Claude Code", "Gemini"], "url": "https://myclassfier.vercel.app/", "img": ""}
   ],
   "proposal": null
 }
