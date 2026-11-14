@@ -13,10 +13,10 @@
      "line": "LIMS 요청 한 줄을 넣으면 칸 · 긴급도 · 이유가 나옵니다. 문장과 정답은 직접 만들었습니다",
      "judgment": "시스템 오류를 놓치는 것을 가장 나쁜 실수로 정했다. 채점용 30개의 정답은 AI의 의도를 가린 채 내가 붙였고, 긴급도 4개가 AI와 갈렸지만 내 판단을 그대로 정답으로 두었다.",
      "ai": ["Claude Code", "Gemini"], "url": "https://myclassfier.vercel.app/", "img": "img/w2.jpg"},
-    {"week": 3, "title": "엑셀 정리기",
-     "line": "엑셀 파일을 넣으면 정리된 파일이 나옵니다. 파일은 브라우저를 떠나지 않습니다",
-     "judgment": "",
-     "ai": ["Claude Code", "Google Colab"], "url": "https://cleaner-lovat-mu.vercel.app/", "img": ""}
+    {"week": 3, "title": "유저 접속량 정리기 — 빈 폴더에서",
+     "line": "유저 접속 로그 엑셀을 끌어다 놓으면 내 처방대로 정리본과 바꾼 기록이 나옵니다. 파일은 브라우저를 떠나지 않습니다",
+     "judgment": "모르는 값은 지어내지 않고 고치지 않은 채 표시했다. 정답과 대조하니 200줄 중 167줄이 일치했고, 어긋난 33칸은 모두 내가 표시한 줄이어서 표시도 못 하고 틀린 채 지나간 줄은 0이었다. 대신 빈칸 · 튀는 값 · 연도 두 자리 날짜 · 초 없는 시간 · 접속시간 모순, 이 33줄은 사람이 확인해야 한다",
+     "ai": ["Claude Code"], "url": "https://my-cleaner-gamma.vercel.app/", "img": ""}
   ],
   "proposal": null
 }
